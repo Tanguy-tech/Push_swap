@@ -6,7 +6,7 @@
 #    By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 10:28:33 by Tanguy            #+#    #+#              #
-#    Updated: 2021/05/15 11:43:32 by tbillon          ###   ########lyon.fr    #
+#    Updated: 2021/05/15 11:58:32 by tbillon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ HEADER = push_swap.h
 
 SRCS = main.c handle_error.c
 
-UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c ft_putchar.c ft_putstr.c
+UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c\
+ft_putchar.c ft_putstr.c ft_lstlast.c
 
 OBJS_SRCS = $(addprefix ./scrs/, $(SRCS:.c=.o))
 
