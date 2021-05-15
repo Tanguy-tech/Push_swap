@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Tanguy <Tanguy@student.42.fr>              +#+  +:+       +#+         #
+#    By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 10:28:33 by Tanguy            #+#    #+#              #
-#    Updated: 2021/05/14 10:47:33 by Tanguy           ###   ########.fr        #
+#    Updated: 2021/05/15 11:43:32 by tbillon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,11 @@ NAME = push_swap
 
 HEADER = push_swap.h
 
-UTILS = 
+SRCS = main.c handle_error.c
+
+UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c ft_putchar.c ft_putstr.c
+
+OBJS_SRCS = $(addprefix ./scrs/, $(SRCS:.c=.o))
 
 OBJS_UTILS = $(addprefix ./utils/, $(UTILS:.c=.o))
 
@@ -37,6 +41,8 @@ CC = gcc
 FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
+
+NAME =		
 
 clean:		@RM $(OBJS_UTILS)
 
