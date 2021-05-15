@@ -6,13 +6,13 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:30:44 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 15:44:32 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 16:06:47 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long int		ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	unsigned char	*str_;
 	int				i;

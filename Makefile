@@ -6,7 +6,7 @@
 #    By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 10:28:33 by Tanguy            #+#    #+#              #
-#    Updated: 2021/05/15 15:44:43 by tbillon          ###   ########lyon.fr    #
+#    Updated: 2021/05/15 16:07:40 by tbillon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ RM = rm -rf
 
 $(NAME):		$(OBJS_SRCS) $(OBJS_UTILS)
 					@printf "$(ERASE)$(GREEN)-> Files .o Created with success$(END)\n"
-					@$(CC) $(FLAGS) $(OBJS_SRCS) $(OBJS_UTILS) -I $(OBJS_HEADER)
+					@$(CC) -fsanitize=address -g3 $(FLAGS) $(OBJS_SRCS) $(OBJS_UTILS) -I $(OBJS_HEADER)
 					@mv a.out $(NAME)
 					@printf "$(CYAN)-> Executable file push_swap created with success!\n$(END)"
 
@@ -61,7 +61,7 @@ all:		$(NAME)
 norme:		
 			norminette $(addprefix ./srcs/, $(SRCS))
 			norminette $(addprefix ./utils/, $(UTILS))
-			norminette $(HEADER)
+			norminette $(addprefix ./include/, $(HEADER))
 
 clean:		
 			@$(RM) $(OBJS_UTILS)

@@ -6,13 +6,13 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:58:08 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 11:58:15 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 16:07:02 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list		*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	int		i;
 	t_list	*list;

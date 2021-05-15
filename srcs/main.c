@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:25:38 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 14:34:48 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 15:59:49 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int	main(int ac, char **av)
 	pile_a = NULL;
 	if (ac <= 1)
 		handle_error(pile_a);
-	store_list(av, pile_a);
+	if (!store_list(av, pile_a))
+		return (handle_error(pile_a));
 }
