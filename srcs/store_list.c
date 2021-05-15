@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   store_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 11:25:38 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 14:34:48 by tbillon          ###   ########lyon.fr   */
+/*   Created: 2021/05/15 14:34:15 by tbillon           #+#    #+#             */
+/*   Updated: 2021/05/15 14:34:22 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	store_list(char **av, t_list *pile)
 {
-	int		i;
-	t_list	*pile_a;
+	int i;
 
-	i = 0;
-	pile_a = NULL;
-	if (ac <= 1)
-		handle_error(pile_a);
-	store_list(av, pile_a);
+	i = 1;
+	while (av[i])
+	{
+		if (valid_args(av[i]))
+			ft_lstadd_back(&pile, ft_lstnew(ft_atoi(av[i])));
+		else
+			handle_error(pile);
+		i++;
+	}
 }
