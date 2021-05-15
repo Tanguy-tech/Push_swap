@@ -6,7 +6,7 @@
 #    By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 10:28:33 by Tanguy            #+#    #+#              #
-#    Updated: 2021/05/15 11:58:32 by tbillon          ###   ########lyon.fr    #
+#    Updated: 2021/05/15 13:36:15 by tbillon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,9 @@ HEADER = push_swap.h
 SRCS = main.c handle_error.c
 
 UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c\
-ft_putchar.c ft_putstr.c ft_lstlast.c
+ft_putchar.c ft_putstr.c ft_lstlast.c ft_lstdelone.c
+
+OBJS_HEADER = $(addprefix ./include/, $(HEADER))
 
 OBJS_SRCS = $(addprefix ./scrs/, $(SRCS:.c=.o))
 
@@ -43,12 +45,30 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-NAME =		
+$(NAME):		$(OBJS_SRCS) $(OBJS_UTILS)
+					@printf "$(ERASE)$(GREEN)-> Files .o Created with success$(END)\n"
+					@$(CC) $(FLAGS) $(OBJS_SRCS) $(OBJS_UTILS) -I $(OBJS_HEADER)
+					@printf "$(CYAN)-> Executable file push_swap created with success!\n$(END)\n"
 
-clean:		@RM $(OBJS_UTILS)
+all:		$(NAME)
+
+%.o: %.c $(OBJS_HEADERS)
+		 @$(CC) $(FLAGS) -c $< -o $(<:.c=.o) -I ./include
+		 @printf "$(ERASE)$(YELLOW)$<....$(END)"
+
+norme:		
+			norminette $(addprefix ./srcs/, $(SRCS))
+			norminette $(addprefix ./utils/, $(UTILS))
+			norminette $(HEADER)
+
+clean:		
+			@$(RM) $(OBJS_UTILS)
+			@$(RM) $(NAME)
+			@$(RM) $(OBJS_SRCS)
+			@$(RM) $(OBJS_UTILS)
 
 fclean:		clean
-			@printf "$(ERASE)$(RED)All files .o cleaned$(END)\n"
+			@printf "$(ERASE)$(RED)All files cleaned$(END)\n"
 
 re:			fclean all
 
