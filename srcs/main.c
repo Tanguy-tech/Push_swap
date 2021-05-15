@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:25:38 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 11:45:43 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 14:01:15 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ int	main(int ac, char **av)
 	t_list	*pile_a;
 
 	i = 0;
+	pile_a = NULL;
 	if (ac <= 1)
 		handle_error(pile_a);
 	while (av[i])
 	{
+		j = 0;
 		while (av[i][j])
 		{
-			if (av[i][j] == "-")
+			if (av[i][j] == '-')
 				j++;
 			while (ft_isdigit(av[i][j]))
 				j++;
@@ -34,7 +36,7 @@ int	main(int ac, char **av)
 	i = 0;
 	while (av[i])
 	{
-		ft_lstaddback(&pile_a, ft_lstnew(ft_atoi(av[i])));
+		ft_lstadd_back(&pile_a, ft_lstnew(ft_atoi(av[i])));
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 10:28:33 by Tanguy            #+#    #+#              #
-#    Updated: 2021/05/15 13:36:15 by tbillon          ###   ########lyon.fr    #
+#    Updated: 2021/05/15 14:13:54 by tbillon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,11 @@ HEADER = push_swap.h
 SRCS = main.c handle_error.c
 
 UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c\
-ft_putchar.c ft_putstr.c ft_lstlast.c ft_lstdelone.c
+ft_putchar.c ft_putstr.c ft_lstlast.c
 
 OBJS_HEADER = $(addprefix ./include/, $(HEADER))
 
-OBJS_SRCS = $(addprefix ./scrs/, $(SRCS:.c=.o))
+OBJS_SRCS = $(addprefix ./srcs/, $(SRCS:.c=.o))
 
 OBJS_UTILS = $(addprefix ./utils/, $(UTILS:.c=.o))
 
@@ -48,13 +48,15 @@ RM = rm -rf
 $(NAME):		$(OBJS_SRCS) $(OBJS_UTILS)
 					@printf "$(ERASE)$(GREEN)-> Files .o Created with success$(END)\n"
 					@$(CC) $(FLAGS) $(OBJS_SRCS) $(OBJS_UTILS) -I $(OBJS_HEADER)
-					@printf "$(CYAN)-> Executable file push_swap created with success!\n$(END)\n"
+					@mv a.out $(NAME)
+					@printf "$(CYAN)-> Executable file push_swap created with success!\n$(END)"
 
 all:		$(NAME)
 
-%.o: %.c $(OBJS_HEADERS)
+
+%.o: %.c $(OBJS_HEADER)
 		 @$(CC) $(FLAGS) -c $< -o $(<:.c=.o) -I ./include
-		 @printf "$(ERASE)$(YELLOW)$<....$(END)"
+		 @printf "$(ERASE)$(YELLOW)$<.............$(END)"
 
 norme:		
 			norminette $(addprefix ./srcs/, $(SRCS))

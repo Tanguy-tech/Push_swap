@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:34:12 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 11:45:15 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 14:12:08 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	handle_error(t_list *lst)
 {
 	if (lst)
-		ft_lstclear(&lst, free);
+		ft_lstclear(&lst);
 	ft_putstr(ERROR);
 	exit(FAIL);
 }
