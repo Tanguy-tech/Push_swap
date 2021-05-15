@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 10:47:54 by Tanguy            #+#    #+#             */
-/*   Updated: 2021/05/15 14:33:22 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 15:45:16 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ int		main(int ac, char **av);
 void	handle_error(t_list *lst);
 int		valid_args(char *av);
 void	store_list(char **av, t_list *pile);
+int 	check_duplicate(long int temp, t_list *list);
 
 /* UTILS */
-int			ft_atoi(const char *str);
+long int	ft_atoi(const char *str);
 int			ft_isdigit(int c);
 void		ft_lstadd_back(t_list **alst, t_list *new);
 t_list		*ft_lstnew(int content);

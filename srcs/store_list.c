@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 14:34:15 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 14:34:22 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 15:43:00 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,20 @@
 
 void	store_list(char **av, t_list *pile)
 {
-	int i;
+	int 		i;
+	long int	tmp;
 
 	i = 1;
 	while (av[i])
 	{
 		if (valid_args(av[i]))
-			ft_lstadd_back(&pile, ft_lstnew(ft_atoi(av[i])));
-		else
-			handle_error(pile);
-		i++;
-	}
+		{
+			tmp = ft_atoi(av[i]);
+			if (!(tmp > 2147483647 || tmp < -2147483648)
+                && check_duplicate(tmp, pile))
+                ft_lstadd_back(&pile, ft_lstnew(tmp));
+            else
+                handle_error(pile); 
+        }
+    }
 }
