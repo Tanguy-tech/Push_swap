@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:33:28 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/16 17:34:28 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/16 17:39:51 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_data	*init_data(t_list *pile)
 	return (new_data);
 }
 
-t_list	*ft_lstnew(t_list *pile, long int num)
+t_list	*ft_lstnew(t_list *pile, long int num, int i)
 {
 	t_list	*new_elem;
 	t_data	*data;
@@ -33,6 +33,7 @@ t_list	*ft_lstnew(t_list *pile, long int num)
 		return (0);
 	new_elem->content = data;
 	new_elem->content->interger = num;
+	new_elem->content->rank = i;
 	new_elem->next = NULL;
 	return (new_elem);
 }

@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 10:47:54 by Tanguy            #+#    #+#             */
-/*   Updated: 2021/05/16 17:34:39 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/16 17:39:33 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 typedef struct	s_data
 {
 	long int		interger;
-	int 			count;
 	int				rank;
 }				t_data;
 
@@ -47,7 +46,7 @@ long int	ft_atoi(const char *str);
 int			ft_isdigit(int c);
 void		ft_lstadd_back(t_list **alst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
-t_list		*ft_lstnew(t_list *pile, long int num);
+t_list		*ft_lstnew(t_list *pile, long int num, int count);
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_putchar(char c);
 void		ft_putstr(char *s);
