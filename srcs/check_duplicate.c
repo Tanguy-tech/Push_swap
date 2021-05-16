@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 15:43:33 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 16:06:30 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/16 17:15:10 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_duplicate(long int tmp, t_list *list)
 {
 	while (list)
 	{
-		if (tmp == (long int)list->content)
+		if (tmp == list->content->interger)
 			return (0);
 		list = list->next;
 	}

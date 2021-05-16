@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 14:21:26 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 15:59:56 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/16 16:43:46 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	valid_args(char *av)
 	while (av[i] && ft_isdigit(av[i]))
 		i++;
 	if (av[i])
-		return (0);
-	return (1);
+		return (FAIL);
+	return (SUCCESS);
 }

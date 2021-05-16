@@ -6,20 +6,33 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:33:28 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/15 15:59:20 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/16 17:34:28 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+t_data	*init_data(t_list *pile)
 {
-	t_list	*new_content;
+	t_data	*new_data;
 
-	new_content = malloc(sizeof(t_list));
-	if (!(new_content))
+	new_data = ft_calloc(sizeof(t_data), 1);
+	if (!(new_data))
+		handle_error(pile);
+	return (new_data);
+}
+
+t_list	*ft_lstnew(t_list *pile, long int num)
+{
+	t_list	*new_elem;
+	t_data	*data;
+
+	new_elem = malloc(sizeof(t_list));
+	data = init_data(pile);
+	if (!(new_elem))
 		return (0);
-	new_content->content = content;
-	new_content->next = NULL;
-	return (new_content);
+	new_elem->content = data;
+	new_elem->content->interger = num;
+	new_elem->next = NULL;
+	return (new_elem);
 }
