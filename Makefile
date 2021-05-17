@@ -6,7 +6,7 @@
 #    By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/14 10:28:33 by Tanguy            #+#    #+#              #
-#    Updated: 2021/05/16 17:09:56 by tbillon          ###   ########lyon.fr    #
+#    Updated: 2021/05/17 15:04:43 by tbillon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,12 @@ NAME = push_swap
 
 HEADER = push_swap.h
 
-SRCS = main.c handle_error.c valid_args.c store_list.c check_duplicate.c
+SRCS = main.c handle_error.c valid_args.c store_list.c check_duplicate.c\
 
 UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c\
-ft_putchar.c ft_putstr.c ft_lstlast.c ft_lstdelone.c ft_calloc.c
+ft_putchar.c ft_putstr.c ft_lstlast.c ft_lstdelone.c ft_calloc.c ft_swap.c\
+ft_lstadd_front.c  ft_lstsize.c ft_sort_int_tab.c
+
 
 OBJS_HEADER = $(addprefix ./include/, $(HEADER))
 

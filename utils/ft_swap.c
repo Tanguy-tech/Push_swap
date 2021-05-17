@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 11:25:38 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/17 14:58:58 by tbillon          ###   ########lyon.fr   */
+/*   Created: 2021/05/17 09:07:26 by tbillon           #+#    #+#             */
+/*   Updated: 2021/05/17 09:56:17 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_swap(int a, int b)
 {
-	int		i;
-	t_list	pile_a;
+	int	x;
 
-	i = 0;
-	if (ac <= 1)
-		handle_error(&pile_a);
-	if (!store_list(av, &pile_a))
-		handle_error(&pile_a);
+	x = a;
+	a = b;
+	b = x;
 }
