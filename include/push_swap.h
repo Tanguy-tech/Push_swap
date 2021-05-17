@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 10:47:54 by Tanguy            #+#    #+#             */
-/*   Updated: 2021/05/17 15:04:51 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/17 16:47:02 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void		handle_error(t_list *lst);
 int			valid_args(char *av);
 int			store_list(char **av, t_list *pile);
 int			check_duplicate(long int tmp, t_list *list);
+void		clear_mem(t_list *pile);
 
 /* UTILS */
 long int	ft_atoi(const char *str);

@@ -6,7 +6,7 @@
 /*   By: tbillon <tbillon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 14:34:15 by tbillon           #+#    #+#             */
-/*   Updated: 2021/05/17 16:20:37 by tbillon          ###   ########lyon.fr   */
+/*   Updated: 2021/05/17 16:55:44 by tbillon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,6 @@ int	store_list(char **av, t_list *pile)
 		i++;
 	}
 	sort_rank(pile);
-	while (pile)
-	{
-		dprintf(1, "val=> %d  rank=> %d\n", pile->content->interger, pile->content->rank);
-		pile = pile->next;
-	}
+	clear_mem(pile);
 	return (1);
 }
